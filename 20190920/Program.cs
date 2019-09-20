@@ -8,6 +8,7 @@ namespace _20190920
 {
     class Program
     {
+        static Random rnd = new Random;
         static void Main(string[] args)
         {
             Console.WriteLine("Szia, hogy hívnak?");
@@ -22,6 +23,15 @@ namespace _20190920
             else
             {
                 Console.WriteLine("Akkor kabbe!");
+            }
+            Console.WriteLine("Nesze itt van 100 csillag");
+            for (int i = 0; i < 100; i++)
+            {
+                Console.SetCursorPosition(
+                    rnd.Next(Console.WindowWidth),
+                    rnd.Next(Console.WindowHeight));
+                Console.ForegroundColor = (ConsoleColor)rnd.Next();
+                Console.Write("*");
             }
             Console.ReadKey();
         }
